@@ -1,0 +1,123 @@
+{
+  "mqConfig": {
+    "user": "iSight",
+    "password": "iSight",
+    "host": "127.0.0.1",
+    "exchange": "iSight",
+    "agentControlXchg": "iAgent"
+  },
+  "subscribe": {
+    "config": "DEPLOYMENT.UCD.config",
+    "agentCtrlQueue": "UCD_LAMP"
+  },
+  "publish": {
+    "data": "DEPLOYMENT.UCD.DATA",
+    "health": "DEPLOYMENT.UCD.HEALTH"
+  },
+  "communication": {
+    "type": "REST",
+    "sslVerify": false,
+    "responseType": "JSON"
+  },
+  "dynamicTemplate": {
+    "timeFieldMapping": {
+      "startDate": "%Y-%m-%d"
+    },
+    "responseTemplate": {
+      "status": "status",
+      "dateScheduled": "dateScheduled",
+      "dateStarted": "dateStarted",
+      "duration": "duration",
+      "environment": "environment",
+      "application": "application",
+      "applicationRequestId": "applicationRequestId",
+      "user": "user"
+    },
+    "deploymentResponseTemplate": {
+      "component": {
+        "id": "componentId",
+        "name": "componentName"
+      },
+      "resource": {
+        "id": "resourceId",
+        "name": "resourceName",
+        "path": "resourcePath"
+      },
+      "version": {
+        "id": "versionId",
+        "name": "versionName",
+        "description": "description",
+        "type": "versionType",
+        "created": "versionCreatedOn",
+        "active": "versionActive",
+        "archived": "versionArchived",
+        "sizeOnDisk": "versionSizeOnDisk"
+      },
+      "application": {
+        "id": "applicationId",
+        "name": "applicationName"
+      },
+      "environment": {
+        "id": "environmentId",
+        "name": "environmentName"
+      },
+      "componentProcess": {
+        "id": "componentProcessId",
+        "name": "componentProcessName"
+      },
+      "agent": {
+        "id": "agentId",
+        "name": "agentName"
+      },
+      "startTime": "startDateTime",
+      "result": "result",
+      "traceId": "traceId",
+      "id": "id",
+      "submittedTime": "submittedTime",
+      "userName": "userName",
+      "loginName": "loginName",
+      "parentRequestId": "parentRequestId",
+      "deploymentRequestId": "deploymentRequestId",
+      "state": "state",
+      "paused": "paused"
+    },
+    "deploymentResponseTemplateChildren": {
+      "id": "deploymentId",
+      "type": "deploymentType",
+      "displayName": "deploymentDisplayName",
+      "name": "deploymentName",
+      "state": "deploymentState",
+      "result": "deploymentResult",
+      "startDate": "startDateTime",
+      "endDate": "endDateTime",
+      "duration": "deploymentDuration",
+      "workflowTraceId": "workflowTraceId",
+      "workingDir": "workingDirectory"
+    }
+  },
+  "agentId": "UCD_LAMP",
+  "componentExecution": true,
+  "toolCategory": "DEPLOYMENT",
+  "runSchedule": 90,
+  "enableDataValidation": true,
+  "userid": "",
+  "passwd": "",
+  "reportType": "com.urbancode.ds.subsys.report.domain.deployment_report.DeploymentReport",
+  "baseUrl": "",
+  "startFrom": "2019-06-01",
+  "toolsTimeZone": "GMT",
+  "insightsTimeZone": "GMT",
+  "useResponseTemplate": true,
+  "isEpochTimeFormat": true,
+  "isDebugAllowed": false,
+  "enableValueArray": false,
+  "timeStampField": "startDateTime",
+  "timeStampFormat": "epoch",
+  "loggingSetting": {
+    "logLevel": "WARN",
+    "maxBytes": 5000000,
+    "backupCount": 1000
+  },
+  "osversion": "windows",
+  "agentVersion": "v5.1"
+}
